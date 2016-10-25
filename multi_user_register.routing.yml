@@ -1,7 +1,7 @@
-pw_user.configsettings:
+multi_user_register.configsettings:
   path: '/admin/config/user-register/settings'
   defaults:
-    _form: '\Drupal\pw_user\Form\UserRegisterForm'
+    _form: '\Drupal\multi_user_register\Form\UserRegisterForm'
     _title: 'MultiSite URL Settings'
   requirements:
     _permission: 'administer site configuration'

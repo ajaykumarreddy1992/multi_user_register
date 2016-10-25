@@ -4,7 +4,6 @@
  * @file
  * Contains multi_user_register.module..
  */
-
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -35,13 +34,13 @@ function multi_user_register_form_user_register_form_alter(&$form, \Drupal\Core\
  */
 function multi_user_register_username_in_register_form(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
   $values = $form_state->getValues();
-  fetch_data($values);
+  multi_user_register_fetch_data($values);
 }
 
 /**
- * Sends a curl request to the register user.
+ * Sends a httpClient request to the register user.
  */
-function fetch_data($values) {
+function multi_user_register_fetch_data($values) {
   $config = \Drupal::service('config.factory')->getEditable('multi_user_register.settings');
   $originaldata = $config->getOriginal();
   foreach ($originaldata as $key => $value) {
@@ -61,14 +60,13 @@ function fetch_data($values) {
       $fields_string = json_encode($post_fields);
       // Send POST Request.
       $response = \Drupal::httpClient()
-        ->post($site['url'], [
-          'auth' => [$site['username'], $site['password']],
-          'body' => $fields_string,
-          'headers' => [
-            'Content-Type' => 'application/json',
-          ],
-        ]);
+          ->post($site['url'], [
+        'auth' => [$site['username'], $site['password']],
+        'body' => $fields_string,
+        'headers' => [
+          'Content-Type' => 'application/json',
+        ],
+      ]);
     }
   }
-
 }
