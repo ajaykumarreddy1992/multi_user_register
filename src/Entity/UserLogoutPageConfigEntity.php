@@ -10,7 +10,7 @@ use Drupal\multi_user_register\UserLogoutPageConfigEntityInterface;
  *
  * @ConfigEntityType(
  *   id = "multi_user_reg_config_entity",
- *   label = @Translation("User Logout "),
+ *   label = @Translation("Multi User Register"),
  *   handlers = {
  *     "list_builder" = "Drupal\multi_user_register\UserLogoutPageConfigEntityListBuilder",
  *     "form" = {
