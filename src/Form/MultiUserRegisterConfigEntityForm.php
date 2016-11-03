@@ -10,11 +10,11 @@ use Drupal\user\Entity\User;
 use Drupal\views\Plugin\views\filter\InOperator;
 
 /**
- * Class UserLogoutPageConfigEntityForm.
+ * Class MultiUserRegisterConfigEntityForm.
  *
  * @package Drupal\multi_user_register\Form
  */
-class UserLogoutPageConfigEntityForm extends EntityForm {
+class MultiUserRegisterConfigEntityForm extends EntityForm {
 
   /**
    * {@inheritdoc}
@@ -28,14 +28,14 @@ class UserLogoutPageConfigEntityForm extends EntityForm {
       '#title' => $this->t('Label'),
       '#maxlength' => 255,
       '#default_value' => $multi_user_reg_config_entity->label(),
-      '#description' => $this->t("Label for the User default page."),
+      '#description' => $this->t("Label for the Multi User Register Site."),
       '#required' => TRUE,
     ];
     $form['id'] = [
       '#type' => 'machine_name',
       '#default_value' => $multi_user_reg_config_entity->id(),
       '#machine_name' => [
-        'exists' => '\Drupal\multi_user_register\Entity\UserLogoutPageConfigEntity::load',
+        'exists' => '\Drupal\multi_user_register\Entity\MultiUserRegisterConfigEntity::load',
       ],
       '#disabled' => !$multi_user_reg_config_entity->isNew(),
     ];
@@ -89,13 +89,13 @@ class UserLogoutPageConfigEntityForm extends EntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label User default page.', [
+        drupal_set_message($this->t('Created the %label Multi User Register site details.', [
               '%label' => $multi_user_reg_config_entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label User default page.', [
+        drupal_set_message($this->t('Saved the %label Multi User Register site details.', [
               '%label' => $multi_user_reg_config_entity->label(),
         ]));
     }

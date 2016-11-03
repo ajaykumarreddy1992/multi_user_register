@@ -3,23 +3,23 @@
 namespace Drupal\multi_user_register\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
-use Drupal\multi_user_register\UserLogoutPageConfigEntityInterface;
+use Drupal\multi_user_register\MultiUserRegisterConfigEntityInterface;
 
 /**
- * Defines the User Logout entity.
+ * Defines the Multi User Register entity.
  *
  * @ConfigEntityType(
  *   id = "multi_user_reg_config_entity",
  *   label = @Translation("Multi User Register"),
  *   handlers = {
- *     "list_builder" = "Drupal\multi_user_register\UserLogoutPageConfigEntityListBuilder",
+ *     "list_builder" = "Drupal\multi_user_register\MultiUserRegisterConfigEntityListBuilder",
  *     "form" = {
- *       "add" = "Drupal\multi_user_register\Form\UserLogoutPageConfigEntityForm",
- *       "edit" = "Drupal\multi_user_register\Form\UserLogoutPageConfigEntityForm",
- *       "delete" = "Drupal\multi_user_register\Form\UserLogoutPageConfigEntityDeleteForm"
+ *       "add" = "Drupal\multi_user_register\Form\MultiUserRegisterConfigEntityForm",
+ *       "edit" = "Drupal\multi_user_register\Form\MultiUserRegisterConfigEntityForm",
+ *       "delete" = "Drupal\multi_user_register\Form\MultiUserRegisterConfigEntityDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\multi_user_register\UserLogoutPageConfigEntityHtmlRouteProvider",
+ *       "html" = "Drupal\multi_user_register\MultiUserRegisterConfigEntityHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "multi_user_reg_config_entity",
@@ -41,38 +41,38 @@ use Drupal\multi_user_register\UserLogoutPageConfigEntityInterface;
  *   }
  * )
  */
-class UserLogoutPageConfigEntity extends ConfigEntityBase implements UserLogoutPageConfigEntityInterface {
+class MultiUserRegisterConfigEntity extends ConfigEntityBase implements MultiUserRegisterConfigEntityInterface {
 
   /**
-   * The User Logout  ID.
+   * The Multi User Register ID.
    *
    * @var string
    */
   protected $id;
 
   /**
-   * The User Logout  label.
+   * The Multi User Register site label.
    *
    * @var string
    */
   protected $label;
 
   /**
-   * The User Logout  url.
+   * The Multi User Register site url.
    *
    * @var string
    */
   protected $url;
 
   /**
-   * The User Logout  username.
+   * The Multi User Register site username.
    *
    * @var string
    */
   protected $username;
 
   /**
-   * The User Logout password.
+   * The Multi User Register site password.
    *
    * @var string
    */

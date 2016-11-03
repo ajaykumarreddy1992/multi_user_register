@@ -7,9 +7,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- * Builds the form to delete User default page entities.
+ * Builds the form to delete multi user register entities.
  */
-class UserLogoutPageConfigEntityDeleteForm extends EntityConfirmFormBase {
+class MultiUserRegisterConfigEntityDeleteForm extends EntityConfirmFormBase {
   /**
    * {@inheritdoc}
    */

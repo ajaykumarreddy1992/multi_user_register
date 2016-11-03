@@ -9,9 +9,9 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\user\Entity\User;
 
 /**
- * Provides a listing of User default page entities.
+ * Provides a listing of multi user register entities.
  */
-class UserLogoutPageConfigEntityListBuilder extends ConfigEntityListBuilder {
+class MultiUserRegisterConfigEntityListBuilder extends ConfigEntityListBuilder {
   /**
    * {@inheritdoc}
    */
