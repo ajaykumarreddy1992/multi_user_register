@@ -39,13 +39,13 @@ class MultiUserRegisterConfigEntityForm extends EntityForm {
       ],
       '#disabled' => !$multi_user_reg_config_entity->isNew(),
     ];
-    $form['cas_logout'] = [
+    $form['multi_user_register'] = [
       '#type' => 'fieldset',
       '#title' => t('Site Settings'),
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
     ];
-    $form['cas_logout']['url'] = [
+    $form['multi_user_register']['url'] = [
       '#title' => $this->t('URL'),
       '#type' => 'textfield',
       '#size' => 64,
@@ -53,14 +53,14 @@ class MultiUserRegisterConfigEntityForm extends EntityForm {
       '#required' => TRUE,
       '#default_value' => $multi_user_reg_config_entity->get_url(),
     ];
-    $form['cas_logout']['username'] = [
+    $form['multi_user_register']['username'] = [
       '#title' => $this->t('Username'),
       '#type' => 'textfield',
       '#description' => $this->t("Enter site username."),
       '#required' => TRUE,
       '#default_value' => $multi_user_reg_config_entity->get_username(),
     ];
-    $form['cas_logout']['password'] = [
+    $form['multi_user_register']['password'] = [
       '#title' => $this->t('password'),
       '#type' => 'textfield',
       '#description' => $this->t("Enter site password."),
